@@ -5,8 +5,16 @@
 }
 body{
 
-    background-color: black;
+    background-color: #161414 !important;
 }
+header{
+    border: 1px solid #332031;
+    background-color: #332031;
+}
+
 p{
     color: white;
 }    
+.text{
+    text-align-last: left;
+}
