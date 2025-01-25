@@ -17,4 +17,44 @@ p{
 }    
 .text{
     text-align-last: left;
+    max-width: 400px;
+    height: auto;
+    font-size: 25px;
+}
+.sss{
+    width: 420px;
+    height: auto;
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.hero div{
+    display: flex;
+    max-width: 1200px;
+
+}
+
+.button {
+    
+
+  /* Rectangle 2 */
+
+
+
+position: relative;
+width: 120px;
+height: 50px;
+left: -750px;
+top: 50px;
+
+
+
+background: #463059;
+border: 1px solid #000000;
+box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+border-radius: 50px;
 }
