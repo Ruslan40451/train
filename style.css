@@ -37,7 +37,10 @@ p{
     max-width: 1200px;
 
 }
-
+a{
+    text-decoration: none;
+    color: #D9D9D9;
+}
 .button {
     
 
@@ -59,6 +62,7 @@ background: #463059;
 border: 1px solid #000000;
 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
 border-radius: 50px;
+
 }
 
 .aaa{
@@ -77,4 +81,12 @@ border-radius: 50px;
     height: 50px;
    
     
+
+}
+.oo{
+    position: relative;
+    left: 700px;
+    top: -420px;
+    
+
 }
