@@ -71,9 +71,9 @@ border-radius: 50px;
     border-radius: 200PX;
     width: 164px;
     height: 54px;
-    position: relative;
-    top: 250px;
-    left: 1170px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
     
 }
 .zz{
@@ -89,4 +89,10 @@ border-radius: 50px;
     top: -420px;
     
 
+}
+main{
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
