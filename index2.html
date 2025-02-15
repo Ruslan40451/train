@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор калорій</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #161414 !important;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Калькулятор калорій</h1>
+
+        <label for="weight">Ваш вага (кг):</label>
+        <input type="number" id="weight" placeholder="Введіть вашу вагу" required>
+
+        <label for="height">Ваш зріст (см):</label>
+        <input type="number" id="height" placeholder="Введіть ваш зріст" required>
+
+        <label for="age">Ваш вік (роки):</label>
+        <input type="number" id="age" placeholder="Введіть ваш вік" required>
+
+        <label for="activity">Рівень активності:</label>
+        <select id="activity">
+            <option value="1.2">Малий рівень (сидяча робота)</option>
+            <option value="1.375">Легка активність (легкі вправи 1-3 дні на тиждень)</option>
+            <option value="1.55">Помірний рівень (помірні вправи 3-5 днів на тиждень)</option>
+            <option value="1.725">Високий рівень (інтенсивні вправи 6-7 днів на тиждень)</option>
+            <option value="1.9">Дуже високий рівень (дуже інтенсивні вправи або фізична робота)</option>
+        </select>
+
+        <button onclick="calculateCalories()">Розрахувати</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateCalories() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const age = parseFloat(document.getElementById('age').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+
+            if (isNaN(weight) || isNaN(height) || isNaN(age)) {
+                alert("Будь ласка, введіть всі дані.");
+                return;
+            }
+
+            // Розрахунок базального рівня метаболізму (BMR) за формулою Гарріса-Бенедикта
+            const bmr = 10 * weight + 6.25 * height - 5 * age + 5;  // Для чоловіків
+            // Для жінок використовується формула: 10 * weight + 6.25 * height - 5 * age - 161
+
+            // Розрахунок загальної кількості калорій з урахуванням рівня активності
+            const totalCalories = bmr * activity;
+
+            // Виведення результату
+            document.getElementById('result').innerHTML = `Ваша добова норма калорій: <strong>${Math.round(totalCalories)} калорій</strong>`;
+        }
+    </script>
+
+</body>
+</html>

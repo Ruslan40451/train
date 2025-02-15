@@ -119,3 +119,14 @@ main {
     align-items: center;
     justify-content: center;
 }
+.qqq{
+    text-decoration: none;
+    color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.qqq:hover{
+    color: #361299;
+    transition: 0.8s;
+}
